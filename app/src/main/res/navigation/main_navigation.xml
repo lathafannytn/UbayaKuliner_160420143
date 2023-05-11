@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_navigation"
+    android:label="Kategori Makanan"
+    app:startDestination="@id/itemTenant">
+
+    <fragment
+        android:id="@+id/itemTenant"
+        android:name="com.example.ubayakuliner_160420143.view.TenantListFragment"
+        android:label="Ubaya Kuliner"
+        tools:layout="@layout/fragment_tenant_list">
+        <action
+            android:id="@+id/actionOptionTenantFragment"
+            app:destination="@id/optionDetailTenantFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/tenantDetailFragment"
+        android:name="com.example.ubayakuliner_160420143.view.TenantDetailFragment"
+        android:label="Detail Tenant"
+        tools:layout="@layout/fragment_tenant_detail" >
+        <action
+            android:id="@+id/actionItemTenant"
+            app:destination="@id/itemTenant" />
+        <argument
+            android:name="tenantId"
+            app:argType="string" />
+        <action
+            android:id="@+id/actionOptionDetailFood"
+            app:destination="@id/optionDetailFoodFragment" />
+        <action
+            android:id="@+id/actionReviewTenant"
+            app:destination="@id/reviewTenantFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/itemProfile"
+        android:name="com.example.ubayakuliner_160420143.view.ProfileFragment"
+        android:label="Profile"
+        tools:layout="@layout/fragment_profile" />
+    <fragment
+        android:id="@+id/itemCategory"
+        android:name="com.example.ubayakuliner_160420143.view.CategoryFragment"
+        android:label="Kategori Makanan"
+        tools:layout="@layout/fragment_category" >
+        <action
+            android:id="@+id/actionOptionDetailFood"
+            app:destination="@id/optionDetailFoodFragment" />
+    </fragment>
+    <dialog
+        android:id="@+id/optionDetailTenantFragment"
+        android:name="com.example.ubayakuliner_160420143.view.OptionDetailTenantFragment"
+        android:label="fragment_option_detail_tenant"
+        tools:layout="@layout/fragment_option_detail_tenant" >
+        <argument
+            android:name="tenantId"
+            app:argType="string" />
+        <action
+            android:id="@+id/actionDetailTenantFragment"
+            app:destination="@id/tenantDetailFragment" />
+    </dialog>
+    <dialog
+        android:id="@+id/optionDetailFoodFragment"
+        android:name="com.example.ubayakuliner_160420143.view.OptionDetailFoodFragment"
+        tools:layout="@layout/fragment_option_detail_food" >
+        <argument
+            android:name="foodId"
+            app:argType="string" />
+    </dialog>
+    <fragment
+        android:id="@+id/reviewTenantFragment"
+        android:name="com.example.ubayakuliner_160420143.view.ReviewTenantFragment"
+        android:label="Review and Ratings"
+        tools:layout="@layout/fragment_review_tenant" >
+        <argument android:name="tenantId"
+            app:argType="string" />
+        <action
+            android:id="@+id/actionOptionReview"
+            app:destination="@id/optionReviewFragment" />
+    </fragment>
+    <dialog
+        android:id="@+id/optionReviewFragment"
+        android:name="com.example.ubayakuliner_160420143.view.OptionReviewFragment"
+        android:label="fragment_option_review"
+        tools:layout="@layout/fragment_option_review" >
+        <argument
+            android:name="reviewId"
+            app:argType="string" />
+    </dialog>
+</navigation>

@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".view.CategoryFragment">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/textViewNamaKategori"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="16dp"
+            android:text="Kategori Makanan "
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/imageViewBreakfast"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_marginTop="16dp"
+            android:src="@drawable/ic_baseline_breakfast_dining_24"
+            app:layout_constraintStart_toStartOf="@+id/textViewNamaKategori"
+            app:layout_constraintTop_toBottomOf="@+id/textViewNamaKategori" />
+
+        <ImageView
+            android:id="@+id/imageViewLunch"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:src="@drawable/ic_baseline_lunch_dining_24"
+            app:layout_constraintEnd_toStartOf="@+id/imageViewDinner"
+            app:layout_constraintHorizontal_bias="0.493"
+            app:layout_constraintStart_toEndOf="@+id/imageViewBreakfast"
+            app:layout_constraintTop_toTopOf="@+id/imageViewBreakfast" />
+
+        <ImageView
+            android:id="@+id/imageViewDinner"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:src="@drawable/ic_baseline_dinner_dining_24"
+            app:layout_constraintEnd_toEndOf="@+id/textViewNamaKategori"
+            app:layout_constraintTop_toTopOf="@+id/imageViewLunch" />
+
+        <TextView
+            android:id="@+id/textView13"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="Breakfast"
+            app:layout_constraintEnd_toEndOf="@+id/imageViewBreakfast"
+            app:layout_constraintStart_toStartOf="@+id/imageViewBreakfast"
+            app:layout_constraintTop_toBottomOf="@+id/imageViewBreakfast" />
+
+        <TextView
+            android:id="@+id/textView15"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:text="Lunch"
+            app:layout_constraintBottom_toBottomOf="@+id/textView13"
+            app:layout_constraintEnd_toEndOf="@+id/imageViewLunch"
+            app:layout_constraintStart_toStartOf="@+id/imageViewLunch"
+            app:layout_constraintTop_toTopOf="@+id/textView13" />
+
+        <TextView
+            android:id="@+id/textView16"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Dinner"
+            app:layout_constraintEnd_toEndOf="@+id/imageViewDinner"
+            app:layout_constraintStart_toStartOf="@+id/imageViewDinner"
+            app:layout_constraintTop_toTopOf="@+id/textView15" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recViewKategoriMakanan"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginTop="16dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView15" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</FrameLayout>

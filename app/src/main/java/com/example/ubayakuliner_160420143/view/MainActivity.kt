@@ -26,6 +26,8 @@ class MainActivity : AppCompatActivity() {
         val navView = findViewById<NavigationView>(R.id.navView)
         NavigationUI.setupWithNavController(navView, navController)
         bottomNav.setupWithNavController(navController)
+
+
     }
 
     override fun onSupportNavigateUp(): Boolean {

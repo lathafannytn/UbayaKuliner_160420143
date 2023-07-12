@@ -1,6 +1,17 @@
 package com.example.ubayakuliner_160420143.model
 
+import androidx.room.Entity
+import androidx.room.PrimaryKey
 import com.google.gson.annotations.SerializedName
+
+
+@Entity(tableName = "users")
+data class UserEntity(
+    @PrimaryKey val id: Int,
+    val username: String,
+    val email: String,
+    val password: String
+)
 data class Food(
     val id:String?,
     var nama:String?,
@@ -28,5 +39,7 @@ data class Tenant(
     @SerializedName("gambar_tempat_url")
     var photoUrl:String?
 )
+
+
 
 
